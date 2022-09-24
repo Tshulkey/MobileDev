@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_margin" >
+
+    <TextView
+        android:id="@+id/label_years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/label_years"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioButton
+        android:id="@+id/ten"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/ten"
+        app:layout_constraintBottom_toBottomOf="@+id/label_years"
+        app:layout_constraintLeft_toRightOf="@id/label_years"
+        app:layout_constraintRight_toLeftOf="@+id/fifteen"
+        app:layout_constraintStart_toEndOf="@+id/label_rate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/fifteen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/fifteen"
+        app:layout_constraintBottom_toBottomOf="@+id/label_years"
+        app:layout_constraintLeft_toRightOf="@id/ten"
+        app:layout_constraintRight_toLeftOf="@id/thirty"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/thirty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="40dp"
+        android:checked="true"
+        android:text="@string/thirty"
+        app:layout_constraintBottom_toBottomOf="@+id/label_years"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/fifteen"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_amount"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/label_years"
+        app:layout_constraintStart_toStartOf="@+id/label_years"
+        app:layout_constraintTop_toBottomOf="@+id/label_years" />
+
+    <EditText
+        android:id="@+id/data_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="@string/amountDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/label_amount"
+        app:layout_constraintEnd_toEndOf="@+id/thirty"
+        app:layout_constraintLeft_toRightOf="@id/label_amount"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_rate"
+        app:layout_constraintTop_toBottomOf="@+id/label_years" />
+
+    <TextView
+        android:id="@+id/label_rate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_rate"
+        app:layout_constraintLeft_toLeftOf="@id/label_amount"
+        app:layout_constraintRight_toRightOf="@id/label_amount"
+        app:layout_constraintStart_toStartOf="@+id/label_amount"
+        app:layout_constraintTop_toBottomOf="@+id/label_amount" />
+
+    <EditText
+        android:id="@+id/data_rate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:text="@string/rateDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/label_rate"
+        app:layout_constraintEnd_toEndOf="@+id/data_amount"
+        app:layout_constraintLeft_toRightOf="@id/label_rate"
+        app:layout_constraintRight_toRightOf="@id/data_amount"
+        app:layout_constraintStart_toEndOf="@+id/label_rate"
+        app:layout_constraintTop_toBottomOf="@+id/data_amount" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="@string/done"
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data_rate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
